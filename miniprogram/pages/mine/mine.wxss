@@ -1,0 +1,131 @@
+/* pages/mine/mine.wxss */
+
+/* 顶部 */
+.mine-top {
+    width: 100%;
+    height: 350rpx;
+    background-image: linear-gradient(180deg,#58bdf7,#079df3);
+}
+
+.mine-top-background {
+    width: 100%;
+    height: 100%;
+}
+
+/* 头像 */
+.mine-logo {
+    width: 100%;
+    height: 350rpx;
+    margin-top: -350rpx;
+}
+
+.mine-logo-button {
+    width: 300rpx;
+    min-height: 10rpx;
+    margin: 50rpx auto;
+}
+
+.mine-logo-photo {
+    width: 160rpx;
+    height: 160rpx;
+    margin: 30rpx auto;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.mine-logo-photo image {
+    width: 100%;
+    height: 100%;
+}
+
+.mine-logo-username {
+    text-align: center;
+    font-weight: 600;
+    margin-top: -10rpx;
+    color: white;
+}
+
+/* 导航区 */
+.mine-nav {
+    width: 90%;
+    height: 200rpx;
+    margin: 0 auto;
+    border-radius: 30rpx;
+    margin-top: -70rpx;
+    background-color: white;
+    box-shadow: 0 0 20rpx rgb(0 0 0 / 20%);
+}
+
+.mine-nav-bar {
+    width: 90%;
+    height: 80%;
+    margin: 20rpx auto;
+}
+
+.mine-nav-item {
+    width: 33.33%;
+    height: 100%;
+    float: left;
+}
+
+.mine-nav-item-logo {
+    width: 65%;
+    height: 65%;
+    margin: 0rpx auto;
+    margin-bottom: 15rpx;
+}
+
+.mine-nav-item-logo image {
+    width: 100%;
+    height: 100%;
+}
+
+.mine-nav-item-text {
+    text-align: center;
+    font-weight: 500;
+}
+
+
+/* 功能区 */
+.mine-menu {
+    margin-top: 30rpx;
+}
+
+.mine-menu-list {
+    width: 100%;
+    border-bottom: 26rpx solid #e7e7e7;
+}
+
+.mine-menu-list-li {
+    width: 92%;
+    height: 100rpx;
+    padding: 0 4%;
+    border-bottom: 1rpx solid #e7e7e7;
+    display: flex;
+    align-items: center;
+}
+
+
+.mine-menu-list-li-icon {
+    flex-shrink: 0;
+}
+
+.mine-menu-list-li-icon image {
+    width: 50rpx;
+    height: 50rpx;
+}
+
+.mine-menu-list-li-text {
+    padding-left: 20rpx;
+    width: 100%;
+    color: #666;
+}
+
+.mine-menu-list-li-to {
+    flex-shrink: 0;
+}
+
+.mine-menu-list-li-to image {
+    width: 40rpx;
+    height: 40rpx;
+}

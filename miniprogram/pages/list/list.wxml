@@ -1,0 +1,36 @@
+<!--pages/list/list.wxml-->
+
+<view class="category">
+    <view class="scroll-view-container">
+        <!-- 左侧滑动区 -->
+        <scroll-view scroll-y style="height: 100vh;" class="scroll-view-left">
+            <block wx:for="{{ category_list }}" wx:key="index">
+                <view class="{{ ['scroll-view-left-item', index == active_index ? 'letf-active' : ''] }}" bindtap="activeChange" id="{{ index }}" >
+                    {{ item.classification }}
+                </view>
+            </block>
+        </scroll-view>
+        <!-- 右侧滑动区 -->
+        <scroll-view scroll-y style="height: 100vh; width: 75%;" class="scroll-view-right">
+            <view wx:for="{{ laboratory_list }}" wx:key="index" class="scroll-view-right-item" id="{{ item._id }}" bindtap="btnLaboratoryInfo">
+                <view class="scroll-view-right-item-image">
+                    <image src="{{ item.photo[0] != null ? item.photo[0] : '../../images/empty/empty1.png' }}" mode="aspectFill"></image>
+                </view>
+                <view class="scroll-view-right-item-text">
+                    <text class="item-text-category">{{ item.name }}</text>
+                    <text class="item-text-position">{{ item.laboratory }}</text>
+                </view>
+            </view>
+            <!-- 判断实验室列表中是否存在数据 -->
+            <view wx:if="{{ !laboratory_list[0] }}" class="no-data">
+                <view class="no-data-img">
+                    <image src="../../images/empty/empty2.png" mode="aspectFit"></image>
+                </view>
+                <view class="no-data-text">
+                    <text>暂时没有数据!</text>
+                </view>
+            </view>
+        </scroll-view>  
+    </view>
+</view>
+

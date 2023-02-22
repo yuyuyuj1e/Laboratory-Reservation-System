@@ -1,0 +1,62 @@
+<!--pages/my_order/my_order.wxml-->
+<view>
+    <!-- 顶部 -->
+    <view class="order-banner">
+        <!-- 顶部文字信息 -->
+        <view class="order-top">
+            <view class="order-top-title">
+                <text>预约列表</text>
+            </view>
+        </view>
+    </view>
+
+    <!-- 导航区 -->
+    <view class="order-nav">
+        <!-- 状态 -->
+        <view class="order-nav-status">
+            <picker bindchange="selectChange" value="{{ select_index }}" range="{{ select_list }}">
+                <view class="order-nav-status-cont">
+                    <text>{{ select_list[select_index] }}</text>
+                </view>
+            </picker>
+        </view>
+    </view>
+
+    <!-- 预约列表 -->
+    <view class="order-list">
+        <!-- 预约项 循环 -->
+        <block wx:for="{{ show_list }}" wx:key="index">
+            <view class="order-item" bindtouchstart="touchStart" bindtouchmove="touchMove" bindtouchend="touchEnd" style="right:{{ item.right }}rpx" id="{{ index }}">
+                <view class="order-item-box">
+                    <view class="item-title">
+                        <text>{{ (!item.status && item.enable) ? '审核中' : (!item.status && !item.enable) ? '未通过' : (select_index == 4 && item.status) ? '历史预约' : '近期预约提醒' }}—{{ item.type == 0 ? '个人预约' : '活动预约' }}</text>
+                    </view>
+                    <view class="item-main">
+                        <view class="main-box-text1">
+                            <text>预约实验室: {{ item.name }}</text>
+                        </view>
+                        <view class="main-box-text2">
+                            <text>预约地点:  {{ item.building }}  {{ item.laboratory }}</text>
+                        </view>
+                        <view class="main-box-text2">
+                            <text>预约时间:  {{ item.show_date }} {{ item.time == 0 ? '08:00 ~ 12:00' : '14:00 ~ 17:30' }}</text>
+                        </view>
+                    </view>
+                </view>
+                <!-- 删除 -->
+                <view class="remove" bindtap="delRecord" id="{{ index }}">
+                    <text>{{ select_index == 4 ? '删除' : '取消' }}</text>
+                </view>
+            </view>
+        </block>
+        <!-- 判断实验室列表中是否存在数据 -->
+        <view wx:if="{{ !show_list[0] }}" class="no-data">
+            <view class="no-data-img">
+                <image src="../../images/empty/empty2.png" mode="aspectFit"></image>
+            </view>
+            <view class="no-data-text">
+                <text>暂时没有数据!</text>
+            </view>
+        </view>
+    </view>
+</view>

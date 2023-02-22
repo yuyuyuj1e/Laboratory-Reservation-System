@@ -1,0 +1,91 @@
+/* pages/list/list.wxss */
+
+/* 滑动区域 */
+.scroll-view-container {
+    display: flex;
+}
+
+/* 左侧滑动区 */
+.scroll-view-left {
+    width: 25%;
+}
+
+.scroll-view-left-item {
+    line-height: 60px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.letf-active {
+    background-color: #e7e7e7;
+    position: relative;
+}
+
+.letf-active::before {
+    content: ' ';
+    display: block;
+    width: 3px;
+    height: 30px;
+    background-color: #00a2ff;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+/* 右侧滑动区 */
+.scroll-view-right-item {
+    width: 50%;
+    height: 25%;
+    float: left;
+}
+
+.scroll-view-right-item-image {
+    width: 80%;
+    height: 60%;
+    margin: 5% auto;
+    background-color: beige;
+}
+
+.scroll-view-right-item-image image{
+    width: 100%;
+    height: 100%;
+}
+
+.scroll-view-right-item-text {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.item-text-position {
+    margin-top: 10rpx;
+}
+
+/* 右侧滑动区没有数据时 */
+.no-data {
+    width: 100%;
+    height: 50%;
+    padding-top: 40%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.no-data-img {
+    width: 80%;
+    height: 60%;
+    margin: 0 auto;
+}
+
+.no-data-img image {
+    width: 100%;
+    height: 100%;
+}
+
+.no-data-text {
+    text-align: center;
+    margin-top: -30rpx;
+    color: #adabab;
+    font-size: 40rpx;
+}

@@ -1,0 +1,213 @@
+/* pages/rank/rank.wxss */
+
+/* 顶部 */
+.top-container {
+    width: 100%;
+    height: 400rpx;
+    position: relative;
+}
+  
+.top-container::after {
+    content: '';
+    width: 160%;
+    height: 500rpx;
+    position: absolute;
+    left: -30%;
+    top: 0;
+    z-index: -1;
+    border-radius: 0 0 50% 50%;
+    background-color: rgb(0, 162, 255);
+}
+
+/* 左侧文字区 */
+.top-title {
+    font-size: 55rpx;
+    letter-spacing: 10rpx;
+    color: white;
+    position: absolute;
+    left: 5%;
+    top: 30%;
+}
+
+.top-time {
+    font-size: 35rpx;
+    letter-spacing: 3rpx;
+    color: rgb(248, 220, 169);
+    position: absolute;
+    left: 5%;
+    top: 65%;
+}
+
+/* 右侧图标 */
+.top-logo image {
+    width: 400rpx;
+    height: 400rpx;
+    position: absolute;
+    left: 49%;
+}
+
+/* 排行区 */
+.bottom-container {
+    width: 93%;
+    height: 1000rpx;
+    margin: 0 auto;
+    border-radius: 30rpx;
+    background-color: white;
+    box-shadow: 0 0 20rpx rgb(0 0 0 / 20%);
+}
+
+
+
+/* 前三 */
+.topThree-container {
+    width: 100%;
+    height: 380rpx;
+    display: flex;
+    position: relative;
+    /* border-bottom: 20rpx solid #e7e7e7; */
+}
+
+.topThree-container::after {
+    content: '';
+    width: 90%;
+    height: 10rpx;
+    position: absolute;
+    top: 370rpx;
+    left: 5%;
+    border-radius: 50rpx;
+    background-color: #e7e7e7;
+}
+
+.topThree-logo {
+    width: 150rpx;
+    height: 150rpx;
+    border-radius: 50%;
+    border: 1rpx solid #e7e7e7;
+    overflow: hidden;
+}
+
+.first .topThree-logo {
+    width: 175rpx;
+    height: 175rpx;
+    border-radius: 50%;
+}
+
+.topThree-logo image {
+    width: 100%;
+    height: 100%;
+}
+
+.topThree-name {
+    margin-top: 10rpx;
+    font-weight: 700;
+    font-size: medium;
+    letter-spacing: 3rpx;
+}
+
+.first .topThree-name {
+    margin-top: 10rpx;
+    font-weight: 800;
+    font-size: large;
+    letter-spacing: 3rpx;
+}
+
+.topThree-crown {
+    width: 100rpx;
+    height: 100rpx;
+    position: absolute;
+    top: -25%;
+    left: 50%;
+}
+
+.first .topThree-crown {
+    width: 100rpx;
+    height: 100rpx;
+    position: absolute;
+    top: -19%;
+    left: 56%;
+}
+
+.topThree-crown image {
+    width: 100%;
+    height: 100%;
+}
+
+
+.first, .second, .third {
+    width: 33.33%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.first {
+    margin-top: 75rpx;
+}
+
+.second {
+    margin-top: 125rpx;
+}
+
+.third {
+    margin-top: 125rpx;
+}
+
+/* 实验室列表 */
+.laboratory-list {
+    width: 100%;
+    height: 500rpx;
+}
+
+.laboratory-item {
+    width: 100%;
+    height: 150rpx;
+    display: flex;
+    align-items: center;
+    border-bottom: 1rpx solid #e7e7e7;
+}
+
+.laboratory-item-rank {
+    font-size: larger;
+    font-weight: 600;
+    margin-left: 7%;
+}
+
+.laboratory-item-img {
+    width: 100rpx;
+    height: 100rpx;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-left: 5%;
+}
+
+.laboratory-item-img image {
+    width: 100%;
+    height: 100%;
+}
+
+.laboratory-item-name {
+    width: 350rpx;
+    font-size: medium;
+    font-weight: 500;
+    letter-spacing: 2rpx;
+    margin-left: 3%;
+}
+
+
+
+.laboratory-item-popularity-img {
+    width: 30rpx;
+    height: 30rpx;
+}
+
+.laboratory-item-popularity-img image {
+    width: 100%;
+    height: 100%;
+}
+
+.laboratory-item-popularity-num {
+    font-size: medium;
+    font-weight: 500;
+    margin-left: 3%;
+}

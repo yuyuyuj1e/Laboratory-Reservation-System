@@ -1,0 +1,104 @@
+/* pages/userInfo/userInfo.wxss */
+
+
+/* 顶部头像信息 */
+.top-banner {
+    width: 100%;
+    height: 300rpx;
+    background-image: linear-gradient(180deg,#58bdf7,#079df3);
+}
+
+.top-banner-img {
+    width: 200rpx;
+    height: 200rpx;
+    margin-top: 40rpx;
+    margin-left: 40rpx;
+    float: left;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.top-banner-img image {
+    width: 100%;
+    height: 100%;
+}
+
+
+.top-banner-user {
+    width: 400rpx;
+    height: 100%;
+    float: right;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.top-banner-user-name {
+    font-size: 40rpx;
+    font-weight: 700;
+}
+
+.top-banner-user-text {
+    font:17rpx;
+    margin-top: 10%;
+}
+
+/* 个人信息 */
+.user-info {
+    width: 100%;
+}
+
+.base-info {
+    width: 100%;
+    border-top: 1rpx solid #c8c8c8;
+}
+
+.info-title {
+    height: 60rpx;
+    padding-left: 30rpx;
+    line-height: 60rpx;
+    letter-spacing: 3rpx;
+    background-color: #e6e4e452;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.info-list {
+    width: 100%;
+}
+
+.info-list-li {
+    width: 88%;
+    padding: 0 6%;
+    border-bottom: 1rpx solid #c8c8c8;
+    display: flex;
+    align-items: center;
+    line-height: 80rpx;
+}
+
+.info-list-li-title {
+    width: 200rpx;
+    font-size: 35rpx;
+}
+
+.info-list-li-cont {
+    font-size: 35rpx;
+}
+
+/* 修改 */
+.bottom {
+    width: 100%;
+    height: 100rpx;
+    margin-top: 30rpx;
+    display: flex;
+    justify-content: center;
+}
+
+.bottom-button {
+    width: 50%;
+    height: 100%;
+    border-radius: 40rpx;
+    font-size: 40rpx;
+}

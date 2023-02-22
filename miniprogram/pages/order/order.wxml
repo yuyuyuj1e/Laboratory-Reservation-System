@@ -1,0 +1,125 @@
+<!--pages/order/order.wxml-->
+
+<view class="view-backround">
+    <!-- 顶部背景图 -->
+    <view class="background">
+        <!-- 顶部文字信息 -->
+        <view class="top">
+            <view class="top-title">
+                <text>在线预约</text>
+            </view>
+        </view>
+    </view>
+
+    <!-- 预约区 -->
+    <view class="order">
+        <view class="order-tpye">
+            <view class="{{ ['order-type-title', tab == 0 ? 'order-type-title-active' : ''] }}" bindtap="tabChange" id="0">
+                <text>个人预约</text>
+            </view>
+            <view class="{{ ['order-type-title', tab == 1 ? 'order-type-title-active' : ''] }}" bindtap="tabChange" id="1">
+                <text>活动预约</text>
+            </view>
+        </view>
+        <view class="order-panel">
+            <view class="{{ ['order-panel-item', tab == 0 ? 'order-type-item-active' : ''] }}" bindtap="tabChange" id="0">
+                <view class="order-panel-item-it person">
+                    <view class="order-panel-item-it-head">
+                        <text>日期</text>
+                    </view>
+                    <view class="order-panel-item-it-box">
+                        <picker range="{{ date }}" value="{{ date_index }}"bindchange="dateChange" >
+                            <text>{{ date[date_index] }}</text>
+                        </picker>
+                    </view>
+                </view>
+                <view class="order-panel-item-it person">
+                    <view class="order-panel-item-it-head">
+                        <text>时间</text>
+                    </view>
+                    <view class="order-panel-item-it-box">
+                        <picker range="{{ time_list }}" value="{{ time_index }}" bindchange="timeChange">
+                            {{ time_list[time_index] }}
+                        </picker>
+                    </view>
+                </view>
+                <view class="order-panel-item-it person">
+                    <view class="order-panel-item-it-head">
+                        <text>地点</text>
+                    </view>
+                    <view class="order-panel-item-it-box">
+                        <picker range="{{ building_list }}" value="{{ building_index }}" bindchange="buildChange">
+                            {{ building_list[building_index] }}
+                        </picker>
+                    </view>
+                </view>
+                <view class="order-panel-item-it person">
+                    <view class="order-panel-item-it-head">
+                        <text>类型</text>
+                    </view>
+                    <view class="order-panel-item-it-box">
+                        <picker range="{{ category_list }}" value="{{ category_index }}" bindchange="categoryChange">
+                            {{ category_list[category_index] }}
+                        </picker>
+                    </view>
+                </view>
+                <view class="order-panel-item-button">
+                    <button bindtap="btnToSelect">提交</button>
+                </view>
+            </view>
+            <view class="{{ ['order-panel-item', tab == 1 ? 'order-type-item-active' : ''] }}" bindtap="tabChange" id="1">
+                <view class="order-panel-item-it class">
+                    <view class="order-panel-item-it-head">
+                        <text>日期</text>
+                    </view>
+                    <view class="order-panel-item-it-box">
+                        <picker range="{{ date }}" value="{{ date_index }}"bindchange="dateChange" >
+                            <text>{{ date[date_index] }}</text>
+                        </picker>
+                    </view>
+                </view>
+                <view class="order-panel-item-it class">
+                    <view class="order-panel-item-it-head">
+                        <text>时间</text>
+                    </view>
+                    <view class="order-panel-item-it-box">
+                        <picker range="{{ time_list }}" value="{{ time_index }}" bindchange="timeChange">
+                            {{ time_list[time_index] }}
+                        </picker>
+                    </view>
+                </view>
+                <view class="order-panel-item-it class">
+                    <view class="order-panel-item-it-head">
+                        <text>地点</text>
+                    </view>
+                    <view class="order-panel-item-it-box">
+                        <picker range="{{ building_list }}" value="{{ building_index }}" bindchange="buildChange">
+                            {{ building_list[building_index] }}
+                        </picker>
+                    </view>
+                </view>
+                <view class="order-panel-item-it class">
+                    <view class="order-panel-item-it-head">
+                        <text>类型</text>
+                    </view>
+                    <view class="order-panel-item-it-box">
+                        <picker range="{{ category_list }}" value="{{ category_index }}" bindchange="categoryChange">
+                            {{ category_list[category_index] }}
+                        </picker>
+                    </view>
+                </view>
+                <view class="order-panel-item-it class">
+                    <view class="order-panel-item-it-head">
+                        <text>人数</text>
+                    </view>
+                    <view class="order-panel-item-it-box">
+                        <van-stepper value="{{ 1 }}" bind:change="numChange" integer input-width="50px" button-size="40px"/>
+                    </view>
+                </view>
+                <view class="order-panel-item-button">
+                    <button bindtap="btnToSelect">提交</button>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

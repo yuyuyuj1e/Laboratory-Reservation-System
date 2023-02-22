@@ -1,0 +1,12 @@
+<!--pages/contact/contact.wxml-->
+<view class="page">
+    <view class="title">
+        <text>联系客服</text>
+    </view>
+    <view class="text">
+        <text>点击下方按钮，在反馈后第一时间联系您！</text>
+    </view>
+    <view class="btn">
+        <van-button round type="info" open-type="contact">联系客服</van-button>
+    </view>
+</view>

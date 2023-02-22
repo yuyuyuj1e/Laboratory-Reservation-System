@@ -1,0 +1,117 @@
+<!--pages/administration/administration.wxml-->
+<view>
+    <!-- 顶部 -->
+    <view class="order-banner">
+        <!-- 顶部文字信息 -->
+        <view class="order-top">
+            <view class="order-top-title">
+                <text>申请列表</text>
+            </view>
+        </view>
+    </view>
+
+    <!-- 导航区 -->
+    <view class="order-nav">
+        <!-- 状态 -->
+        <view class="order-nav-status">
+            <picker bindchange="selectChange" value="{{ select_index }}" range="{{ select_list }}">
+                <view class="order-nav-status-cont">
+                    <text>状态: {{ select_list[select_index] }}</text>
+                </view>
+            </picker>
+        </view>
+        </view>
+    
+    <!-- 预约记录 -->
+    <scroll-view scroll-y class="order-container">
+        <!-- 如果不是审核中状态的话 只要预约记录有效就显示 -->
+        <!-- 如果是审核中状态话，不仅需要预约记录有效，还需要此状态是审核中 -->
+        <!-- 这个逻辑是为了在点击同意、拒绝、取消时，改变预约记录的状态和显示  -->
+        <view class="order-li" wx:for="{{ show_list }}" wx:key="index" wx:if="{{ (item.enable && select_index != 1) ? true : (select_index == 1 && !item.status && item.enable ) ? true : false}}">
+            <view class="order-li-top">
+                <view class="li-top-title">
+                    <text>实验室</text>
+                </view>
+                <view class="li-top-cont">
+                    <text>{{ item.name }}</text>
+                </view>
+            </view>
+            <view class="order-li-middle-container">
+                <view class="middle-box">
+                    <view class="li-middle-title">
+                        <text>预约日期</text>
+                    </view>
+                    <view class="li-middle-cont">
+                        <text>{{ item.show_date }}</text>
+                    </view>
+                </view>
+                <view class="middle-box">
+                    <view class="li-middle-title">
+                        <text>预约时间</text>
+                    </view>
+                    <view class="li-middle-cont">
+                        <text>{{ item.time == "0" ? '08:00 ~ 12:00' : '14:00 ~ 17:30' }}</text>
+                    </view>
+                </view>
+                <view class="middle-box">
+                    <view class="li-middle-title">
+                        <text>预约类型</text>
+                    </view>
+                    <view class="li-middle-cont">
+                        <text>{{ item.type == '0' ? '个人预约' : '活动预约' }}</text>
+                    </view>
+                </view>
+                
+                <view class="middle-box" wx:if="{{ item.type == '1' }}">
+                    <view class="li-middle-title">
+                        <text>申请班级</text>
+                    </view>
+                    <view class="li-middle-cont">
+                        <text>{{ item.class }}</text>
+                    </view>
+                </view>
+                <view class="middle-box" wx:if="{{ item.type == '0' }}">
+                    <view class="li-middle-title">
+                        <text>申请用户</text>
+                    </view>
+                    <view class="li-middle-cont">
+                        <text>{{ item.user_name }}</text>
+                    </view>
+                </view>
+
+                <view class="middle-box">
+                    <view class="li-middle-title">
+                        <text>申请人数</text>
+                    </view>
+                    <view class="li-middle-cont">
+                        <text>{{ item.count }}人</text>
+                    </view>
+                </view>
+                <view class="middle-box">
+                    <view class="li-middle-title">
+                        <text>预约状态</text>
+                    </view>
+                    <view class="li-middle-cont">
+                        <text>{{ item.status ? '已通过' : '审核中' }}</text>
+                    </view>
+                </view>
+            </view>
+            <view class="order-li-bottom">
+                <view class="bottom-left" bindtap="btnPermit" id="{{ index }}" wx:if="{{ !item.status }}">
+                    <text>同意</text>
+                </view>
+                <view class="bottom-right" bindtap="btnRefuse" id="{{ index }}" wx:if="{{ !item.status }}">
+                    <text>拒绝</text>
+                </view>
+                <view class="bottom-bottom" bindtap="btnCancel" id="{{ index }}" wx:if="{{ item.status }}">
+                    <text>取消预约</text>
+                </view>
+            </view>
+        </view>
+    </scroll-view>
+
+    <!-- 底部按钮 -->
+    <view class="bottom">
+        <button bindtap="btnNextDay">模拟到下一天</button>
+    </view>
+</view>

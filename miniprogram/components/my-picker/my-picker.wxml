@@ -1,0 +1,28 @@
+<!--components/my-picker/my-picker.wxml-->
+
+
+<van-cell title="{{picker[0]}}" value="{{value}}" bind:click="showPopup" is-link arrow-direction="{{arrowdirection}}" />
+<!-- 当为日期选择时 -->
+<view wx:if="{{type=='date'}}">
+	<van-popup show="{{show}}" round position="bottom" custom-style="height: 50%" bind:close="onClose">
+		<van-datetime-picker type="date" value="{{currentDate}}" bind:input="onInput" min-date="{{ minDate }}" />
+	</van-popup>
+</view>
+<!-- 当为时间选择时 -->
+<view wx:elif="{{type=='time'}}">
+	<van-popup show="{{show}}" round position="bottom" custom-style="height: 50%" bind:close="onClose">
+		<van-datetime-picker type="time" value="{{currentTime}}" bind:input="onInputTime" />
+	</van-popup>
+</view>
+<!-- 当为多级选择时 -->
+<view wx:elif="{{type=='MultiPicker'}}">
+	<van-popup show="{{show}}" round position="bottom" custom-style="height: 50%" bind:close="onClose">
+		<van-picker columns="{{columns}}" bind:change="onChanges" show-toolbar bind:confirm="onConfirm" />
+	</van-popup>
+</view>
+<!-- 普通单列选择 -->
+<view wx:else>
+	<van-popup show="{{show}}" round position="bottom" custom-style="height: 50%" bind:close="onClose">
+		<van-picker columns="{{picker[1]}}" bind:change="onChange" show-toolbar bind:confirm="onConfirm" />
+	</van-popup>
+</view>

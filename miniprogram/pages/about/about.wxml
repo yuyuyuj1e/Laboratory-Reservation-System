@@ -1,0 +1,58 @@
+<!--pages/about/about.wxml-->
+
+<!-- 顶部logo -->
+<view class="about-top">
+    <view class="about-top-img">
+        <image src="../../images/logo.png"></image>
+    </view>
+    <view class="about-top-version">
+        <text>版本号 : {{ system_version }}</text>
+    </view>
+</view>
+
+<!-- 中部信息 -->
+<view class="about-middle">
+    <view class="about-middle-list">
+        <view class="about-middle-list-title">
+            <text>基本信息</text>
+        </view>
+        <view class="about-middle-list-cont">
+            <text>{{ detail.base }}</text>
+        </view>     
+    </view>
+    <view class="about-middle-list">
+        <view class="about-middle-list-title">
+            <text>程序版本号</text>
+        </view>
+        <view class="about-middle-list-cont">
+            <text>{{ detail.version }}</text>
+        </view> 
+    </view>
+    <view class="about-middle-list">
+        <view class="about-middle-list-title">
+            <text>实现方式</text>
+        </view>
+        <view class="about-middle-list-cont">
+            <text>{{ detail.model }}</text>
+        </view>
+    </view>
+    <view class="about-middle-list">
+        <view class="about-middle-list-title">
+            <text>学校</text>
+        </view>
+        <view class="about-middle-list-cont">
+            <text>{{ detail.university }}</text>
+        </view>
+    </view>
+    <view class="about-middle-list">
+        <view class="about-middle-list-title">
+            <text>版权所有</text>
+        </view>
+        <view class="about-middle-list-cont">
+            <text>{{ detail.copyright }}</text>
+        </view>   
+    </view>
+</view>
+        
+<!-- 底部颜色 -->
+<view class="about-bottom"></view>

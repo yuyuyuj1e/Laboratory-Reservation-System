@@ -1,0 +1,160 @@
+/* pages/cselect/cselect.wxss */
+
+
+page {
+    background-image: linear-gradient(180deg,#079df3, #e4f2fa);
+}
+
+/* 背景颜色 */
+.order-background {
+    width: 100vh;
+    height: 210rpx;
+}
+
+/* 顶部文字 */
+.order-top {
+    width: 750rpx;
+    height: 210rpx;
+}
+
+
+.order-top-title {
+    font-size: 60rpx;
+    font-weight: bolder;
+    letter-spacing: 20rpx;
+    color: #fff;
+    text-align: center;
+    line-height: 210rpx;
+}
+
+
+/* 导航区 */
+.order-nav {
+    width: 100%;
+    height: 80rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: -30rpx;
+}
+
+.order-nav-status {
+    width: 30%;
+    line-height: 80rpx;
+    font-weight: 500;
+    font-size: 32rpx;
+    display: flex;
+    color: #fff;
+}
+
+.order-nav-status-cont {
+    padding-left: 15rpx;
+}
+
+/* 实验室列表区 */
+.laboratory-list {
+    width: 100%;
+    height: 80vh;
+    margin-top: 30rpx;
+}
+
+.laboratory-list-li {
+    width: 96%;
+    height: 300rpx;
+    margin: 0 2%;
+    margin-top: 30rpx;
+    margin-bottom: 15rpx;
+}
+
+.laboratory-box {
+    width: 100%;
+    height: 100%;
+    border-radius: 30rpx;
+    box-shadow: 0 0 20px rgb(0 0 0 / 30%);
+}
+
+/* 不同状态 设置不同的 颜色 */
+.permit {
+    background-image: linear-gradient(to right, rgba(0, 253, 13, 0.445),rgba(9, 184, 97, 0.336));
+}
+
+.already {
+    background-image: linear-gradient(to right, rgba(253, 249, 0, 0.616),rgba(155, 128, 11, 0.438));
+}
+
+
+/* .prohibit {
+    background-image: linear-gradient(to right, rgba(32, 32, 32, 0.438),rgba(85, 85, 85, 0.349));
+} */
+
+
+.laboratory-list-li-img {
+    width: 40%;
+    height: 100%;
+    float: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.laboratory-list-li-img image{
+    width: 90%;
+    height: 90%;
+}
+
+.laboratory-list-li-box {
+    width: 56%;
+    height: 100%;
+    float: left;
+}
+
+.box-top {
+    width: 100%;
+    height: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1rpx solid #7a797934;
+} 
+
+.top-text1 {
+    font-weight: 500;
+    font-size: 45rpx;
+}
+
+.top-text2 {
+    margin-left: 30rpx;
+    margin-top: 20rpx;
+    font-size: 35rpx;
+}
+
+.box-middle {
+    width: 100%;
+    height: 30%;
+    font-size: 40rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1rpx solid #7a797934;
+}
+
+.box-middle text {
+    padding-left: 30rpx;
+    padding-right: 30rpx;
+}
+
+
+.box-bottom {
+    width: 100%;
+    height: 30%;
+}
+
+.box-bottom-left, .box-bottom-right {
+    width: 50%;
+    height: 100%;
+    float: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30rpx;
+}

@@ -1,0 +1,66 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/mine/mine",
+    "pages/order/order",
+    "pages/list/list",
+    "pages/news/news",
+    "pages/about/about",
+    "pages/select/select",
+    "pages/cselect/cselect",
+    "pages/userInfo/userInfo",
+    "pages/alterInfo/alterInfo",
+    "pages/feedback/feedback",
+    "pages/laboratoryInfo/laboratoryInfo",
+    "pages/contact/contact",
+    "pages/confirm/confirm",
+    "pages/regulation/regulation",
+    "pages/my_order/my_order",
+    "pages/administration/administration",
+    "pages/userAdmin/userAdmin",
+    "pages/rank/rank",
+    "pages/test/test"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#0dbaee",
+    "navigationBarTitleText": "实验室预约系统",
+    "navigationBarTextStyle": "white"
+  },
+  "usingComponents": {
+    "van-button": "@vant/weapp/button/index",
+    "van-tabbar": "@vant/weapp/tabbar/index",
+    "van-tabbar-item": "@vant/weapp/tabbar-item/index"
+  },
+  "tabBar": {
+    "custom": true,
+    "list": [
+            {
+              "pagePath": "pages/home/home",
+              "text": "首页",
+              "iconPath": "/images/tab_home.png",
+              "selectedIconPath": "/images/tab_home_active.png"
+            },
+            {
+              "pagePath": "pages/order/order",
+              "text": "预约",
+              "iconPath": "/images/tab_order.png",
+              "selectedIconPath": "/images/tab_order_active.png"
+            },
+            {
+              "pagePath": "pages/rank/rank",
+              "text": "排行",
+              "iconPath": "/images/tab_rank.png",
+              "selectedIconPath": "/images/tab_rank_active.png"
+            },
+            {
+              "pagePath": "pages/mine/mine",
+              "text": "个人中心",
+              "iconPath": "/images/tab_mine.png",
+              "selectedIconPath": "/images/tab_mine_active.png"
+            }
+        ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

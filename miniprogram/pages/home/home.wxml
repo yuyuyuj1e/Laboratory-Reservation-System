@@ -1,0 +1,91 @@
+<!--pages/home/home.wxml-->
+
+<view>
+    <!-- 轮播图 -->
+    <view class="banner">
+        <swiper class="swiper-image" indicator-dots autoplay circular interval="3000">
+            <block wx:for="{{ swiper_image_list }}" wx:key="_id">
+                <swiper-item>
+                    <image style="width: 100%; height: 100%;" mode="aspectFill" src="{{item.photo}}"></image>
+                </swiper-item>
+            </block>
+        </swiper>
+    </view>
+
+    <!-- 通知公告 -->
+    <view class="notice">
+        <!-- logo部分 -->
+        <view class="notice-left">
+            <image src="../../images/notice.png"></image>
+            <view class="notice-title">【通知】</view>
+        </view>
+        <!-- 内容部分 -->
+        <view class="notice-right">
+            <swiper class="swiper-notice" autoplay interval="6000" circular vertical>
+                <block wx:for="{{ swiper_notice_list }}" wx:key="_id">
+                <swiper-item>
+                    <view class="swiper-notice-item">· {{ item.text }}</view>
+                </swiper-item>
+            </block>
+            </swiper>
+        </view>
+    </view>
+
+    <!-- 导航列表 -->
+    <view class="navigation">
+        <view class="nav-banner-item" wx:for="{{ navigation_list }}" wx:key="index" bindtap="btnNavBar" id="{{ item.id }}">
+            <view class="nav-banner-img" style="{{'background:'+item.bg+';'}}">
+                <image src="{{ item.icon }}"></image>
+            </view>
+            <view class="nav-banner-text">{{ item.text }}</view>
+        </view>
+    </view>
+
+    <!-- 实验室列表 -->
+    <!-- <view class="laboratory">
+        <view class="laboratory-top">
+            <view class="laboratory-top-left">
+                <text>实验室列表</text>
+            </view>
+            <view class="laboratory-top-right">
+                <text bindtap="btnLab">查看更多</text>
+            </view>
+        </view>
+        <view class="laboratory-bottom">
+            <view class="laboratory-item">
+                <view class="laboratory-name">
+                    <text>· {{ lab_list[3].name }}</text>   
+                </view>
+                <view class="laboratory-count">
+                    <text>· 最大容量{{ lab_list[3].max_count }}人</text>
+                </view>
+            </view>
+            <view class="laboratory-item">
+                <view class="laboratory-name">
+                    <text>· {{ lab_list[0].name }}</text>   
+                </view>
+                <view class="laboratory-count">
+                    <text>· 最大容量{{ lab_list[0].max_count }}人</text>
+                </view>
+            </view>
+        </view>
+    </view> -->
+
+    <!-- 实验室活动公告 -->
+    <view class="news-bar">
+        <view class="news-bar-title">
+            <text>实验室活动公告</text>
+        </view>
+        <view class="news-bar-box" wx:for="{{ news_list }}" wx:key="_id" id="{{ item._id }}" wx:if="{{ index < 10}}" bindtap="btnTurnToNews">
+            <view class="news-box-img">
+                <image src="{{ item.photo }}" mode="aspectFill"></image>
+            </view>
+            <view class="news-box-text">
+                <view class="news-box-text-title">{{ item.title }}</view>
+                <view class="news-box-text-time">发布日期: {{ item.date }}</view>
+            </view>
+        </view>
+    </view>
+
+    <view class="bottom"></view>
+</view>

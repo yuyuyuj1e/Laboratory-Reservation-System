@@ -1,0 +1,22 @@
+<!--custom-tab-bar/index.wxml-->
+<!-- 自定义tab-bar组件 -->
+<van-tabbar active="{{ active }}" bind:change="onChange">
+  <van-tabbar-item wx:for="{{ list }}" wx:key="index" info= "{{ item.info ? item.info: ''}}">
+    <!-- 未被选中时 -->
+    <image
+      slot="icon"
+      src="{{ item.iconPath }}"
+      mode="aspectFit"
+      style="width: 50rpx; height: 50rpx;"
+    />
+    <!-- 被选中时 -->
+    <image
+      slot="icon-active"
+      src="{{ item.selectedIconPath }}"
+      mode="aspectFit"
+      style="width: 50rpx; height: 50rpx;"
+    />
+    <!-- text -->
+    {{ item.text }}
+  </van-tabbar-item>
+</van-tabbar>

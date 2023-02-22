@@ -1,0 +1,126 @@
+<!--pages/userInfo/userInfo.wxml-->
+
+<!-- 顶部 -->
+<view class="top-banner"> 
+    <view class="top-banner-img">     
+        <image src="{{ user_info.logo }}"></image>
+    </view>
+    <view class="top-banner-user">
+        <view class="top-banner-user-name">
+            <text>{{ user_info.nickname }}</text>
+        </view>
+        <view class="top-banner-user-text">
+            <text>爱国 求是 奋进</text>
+        </view>
+    </view>
+</view>
+
+<!-- 个人信息 -->
+<view class="user-info">
+    <view class="base-info">
+        <view class="info-title">
+            <text>基本信息</text>
+        </view>
+        <view class="info-list">
+            <view class="info-list-li">
+                <view class="info-list-li-title">
+                    <text>姓名:</text>
+                </view>
+                <view class="info-list-li-cont">
+                    <text>{{ user_info.name }}</text>
+                </view>
+            </view>
+            <view class="info-list-li">
+                <view class="info-list-li-title">
+                    <text>学号:</text>
+                </view>
+                <view class="info-list-li-cont">
+                    <text>{{ user_info.student_number }}</text>
+                </view>
+            </view>
+            <view class="info-list-li">
+                <view class="info-list-li-title">
+                    <text>性别:</text>
+                </view>
+                <view class="info-list-li-cont">
+                    <text>{{ user_info.gender }}</text>
+                </view>
+            </view>
+            <view class="info-list-li">
+                <view class="info-list-li-title">
+                    <text>出生日期:</text>
+                </view>
+                <view class="info-list-li-cont">
+                    <text>{{ user_info.date_of_birth }}</text>
+                </view>
+            </view>
+        </view>
+    </view>
+
+    <view class="class-info">
+        <view class="info-title">
+            <text>学校班级</text>
+        </view>
+        <view class="info-list">
+            <view class="info-list-li">
+                <view class="info-list-li-title">
+                    <text>学校:</text>
+                </view>
+                <view class="info-list-li-cont">
+                    <text>{{ user_info.university }}</text>
+                </view>
+            </view>
+            <view class="info-list-li">
+                <view class="info-list-li-title">
+                    <text>学院:</text>
+                </view>
+                <view class="info-list-li-cont">
+                    <text>{{ user_info.academy }}</text>
+                </view>
+            </view>
+            <view class="info-list-li">
+                <view class="info-list-li-title">
+                    <text>班级:</text>
+                </view>
+                <view class="info-list-li-cont">
+                    <text>{{ user_info.class }}</text>
+                </view>
+            </view>
+        </view>
+    </view>
+
+    <view class="contact-info">
+        <view class="info-title">
+            <text>联系方式</text>
+        </view>
+        <view class="info-list">
+            <view class="info-list-li">
+                <view class="info-list-li-title">
+                    <text>电话:</text>
+                </view>
+                <view class="info-list-li-cont">
+                    <text>{{ user_info.tel }}</text>
+                </view>
+            </view>
+            <view class="info-list-li">
+                <view class="info-list-li-title">
+                    <text>邮箱:</text>
+                </view>
+                <view class="info-list-li-cont">
+                    <text>{{ user_info.email }}</text>
+                </view>
+            </view>
+            <view class="info-list-li">
+                <view class="info-list-li-title">
+                    <text>地址:</text>
+                </view>
+                <view class="info-list-li-cont">
+                    <text>{{ user_info.address }}</text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="bottom">
+        <button class="bottom-button" type="primary" bindtap="btnChange">修改</button>
+    </view>
+</view>

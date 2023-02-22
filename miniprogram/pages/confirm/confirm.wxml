@@ -1,0 +1,74 @@
+<!--pages/confirm/confirm.wxml-->
+<view class="background-img">
+    <image src="../../images/bg.jpg"></image>
+</view>
+<view class="main">
+    <!-- 标题 -->
+    <view class="main-title">{{ tab == 0 ? '个人预约' : '活动预约' }}</view>
+    <!-- 选择日期、时间 -->
+    <view class="main-top">
+        <view class="date-box">
+            <view class="top-box-title">
+                <view class="box-title-icon">
+                    <image src="../../images/calendar.png"></image>
+                </view>
+                <view class="box-title-text">
+                    选择日期
+                </view>
+            </view>
+            <view class="top-main">
+                    <view class="top-main-text">{{ date == '明天' ? show_date[0] : show_date[1]}}</view>
+            </view>
+        </view>
+        <view class="time-box">
+            <view class="top-box-title">
+                <view class="box-title-icon">
+                    <image src="../../images/online-tracking.png"></image>
+                </view>
+                <view class="box-title-text">
+                    <text>选择时间</text>
+                </view>
+            </view>
+            <view class="top-main">
+                    <view class="top-main-text">
+                        <text>{{ time == "0" ? "08:00 ~ 12:00" : "14:00 ~ 17:30" }}</text>
+                    </view>
+            </view>
+        </view>
+    </view>
+    <!-- 位置信息 -->
+    <view class="main-middle">
+        <view class="middle-bottom-box-title">
+            <view class="box-title-icon">
+                    <image src="../../images/map.png"></image>
+            </view>
+            <view class="box-title-text">
+                <text>位置信息</text>
+            </view>
+        </view>
+        <view class="middle-bottom-box-text">
+            <text>{{ building }}  {{ laboratory }}  {{ lab_name }}</text>
+        </view>
+    </view>
+    <!-- 用户信息 -->
+    <view class="main-bottom">
+        <view class="middle-bottom-box-title">
+            <view class="box-title-icon">
+                <image src="../../images/yh.png"></image>
+            </view>
+            <view class="box-title-text">
+                <text>用户信息</text>
+            </view>
+        </view>
+        <view class="middle-bottom-box-text">
+            <text>姓名：{{ user_info.name }}</text>
+        </view>
+        <view class="middle-bottom-box-text">
+            <text>班级：{{ user_info.class }}</text>
+        </view>
+    </view>
+    <view class="main-button">
+        <button class="main-button-left" bindtap="btnConfirm">确认</button>
+        <button class="main-button-right" bindtap="btnCancel">取消</button>
+    </view>
+</view>

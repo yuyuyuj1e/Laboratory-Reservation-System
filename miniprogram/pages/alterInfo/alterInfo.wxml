@@ -1,0 +1,135 @@
+<!--pages/alterInfo/alterInfo.wxml-->
+
+<!-- 顶部 -->
+<view class="top-banner"> 
+    <view class="top-banner-img">
+        <!-- <open-data type="userAvatarUrl"></open-data> -->       
+        <image src="{{ user_info.logo }}"></image>
+    </view>
+    <view class="top-banner-user">
+        <!-- <open-data type="userNickName" lang="zh_CN" class="top-banner-user-name"></open-data>   -->
+        <view class="top-banner-user-name">
+            <text>{{ user_info.nickname }}</text>
+        </view>
+        <view class="top-banner-user-text">
+            <text>爱国 求是 奋进</text>
+        </view>
+    </view>
+</view>
+
+<!-- 个人信息 -->
+<view class="user-info">
+    <form catchsubmit="formSubmit">
+        <view class="base-info">
+            <view class="info-title">
+                <text>基本信息</text>
+            </view>
+            <view class="info-list">
+                <view class="info-list-li">
+                    <view class="info-list-li-title">
+                        <text>姓名:</text>
+                    </view>
+                    <view class="info-list-li-cont">
+                        <input type="text" value="{{ user_info.name }}" name="name" placeholder="姓名" />
+                    </view>
+                </view>
+                <view class="info-list-li">
+                    <view class="info-list-li-title">
+                        <text>学号:</text>
+                    </view>
+                    <view class="info-list-li-cont">
+                        <text>{{ user_info.student_number }}</text>
+                    </view>
+                </view>
+                <view class="info-list-li">
+                    <view class="info-list-li-title">
+                        <text>性别:</text>
+                    </view>
+                    <view class="info-list-li-cont">
+                        <picker bindchange="genChange" range="{{ gender }}" value="{{gender_index}}" name="gender">
+                            <text>{{ user_info.gender }}</text>
+                        </picker>
+                    </view>
+                </view>
+                <view class="info-list-li">
+                    <view class="info-list-li-title">
+                        <text>出生日期:</text>
+                    </view>
+                    <view class="info-list-li-cont">
+                        <picker mode="date" value="{{ user_info.date_of_birth }}" bindchange="birChange" name="birth">
+                            <text>{{ user_info.date_of_birth }}</text>
+                        </picker>
+                    </view>
+                </view>
+            </view>
+        </view>
+
+        <view class="class-info">
+            <view class="info-title">
+                <text>学校班级</text>
+            </view>
+            <view class="info-list">
+                <view class="info-list-li">
+                    <view class="info-list-li-title">
+                        <text>学校:</text>
+                    </view>
+                    <view class="info-list-li-cont">
+                        <input type="text" value="{{ user_info.university }}" name="university" placeholder="学校"/>
+                    </view>
+                </view>
+                <view class="info-list-li">
+                    <view class="info-list-li-title">
+                        <text>学院:</text>
+                    </view>
+                    <view class="info-list-li-cont">
+                        <input type="text" value="{{ user_info.academy }}" name="academy" placeholder="学院" />
+                    </view>
+                </view>
+                <view class="info-list-li">
+                    <view class="info-list-li-title">
+                        <text>班级:</text>
+                    </view>
+                    <view class="info-list-li-cont">
+                        <input type="text" value="{{ user_info.class }}" name="class" placeholder="班级" />
+                    </view>
+                </view>
+            </view>
+        </view>
+
+        <view class="contact-info">
+            <view class="info-title">
+                <text>联系方式</text>
+            </view>
+            <view class="info-list">
+                <view class="info-list-li">
+                    <view class="info-list-li-title">
+                        <text>电话:</text>
+                    </view>
+                    <view class="info-list-li-cont">
+                        <input type="number" value="{{ user_info.tel }}" name="tel" placeholder="电话" />
+                    </view>
+                </view>
+                <view class="info-list-li">
+                    <view class="info-list-li-title">
+                        <text>邮箱:</text>
+                    </view>
+                    <view class="info-list-li-cont">
+                        <input type="text" value="{{ user_info.email }}" name="email" placeholder="邮箱" />
+                    </view>
+                </view>
+                <view class="info-list-li">
+                    <view class="info-list-li-title">
+                        <text>地址:</text>
+                    </view>
+                    <view class="info-list-li-cont">
+                        <input type="text" value="{{ user_info.address }}" name="address" placeholder="地址" />
+                    </view>
+                </view>
+            </view>
+        </view>
+
+        <view class="bottom">
+            <button class="bottom-button" type="primary" formType="submit">提交</button>
+        </view>
+    </form>
+</view>

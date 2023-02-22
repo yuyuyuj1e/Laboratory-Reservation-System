@@ -1,0 +1,19 @@
+<!--pages/regulation/regulation.wxml-->
+
+<view>
+    <view class="item" wx:for="{{ regulation_list }}" wx:key="index">
+        <view class="item-box">
+            <view class="item-title">
+                <text>{{ item.title }}</text>
+            </view>
+            <view class="item-main">
+                <view class="item-main-box">
+                        <view class="item-main-text" wx:for="{{ item.content }}" wx:key="item_index" wx:for-item="item1" >
+                        <text>{{ item1 }}</text>
+                    </view>
+                </view>
+            </view>
+        </view>   
+    </view>
+    <view class="bottom"></view>
+</view>

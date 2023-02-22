@@ -1,0 +1,6 @@
+/* custom-tab-bar/index.wxss */
+
+/* 取消自定义tab-bar图标与text之间的margin */
+.van-tabbar-item__icon {
+    --tabbar-item-margin-bottom: 0
+}

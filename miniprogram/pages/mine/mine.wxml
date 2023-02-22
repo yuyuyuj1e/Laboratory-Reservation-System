@@ -1,0 +1,86 @@
+<!--pages/mine/mine.wxml-->
+
+<!-- 顶部背景 -->
+<view class="mine-top">
+    <!-- <view class="mine-top-background"></view> -->
+    <image class="mine-top-background" src="../../images/banner_img.jpg"></image>
+</view>
+
+<!-- 头像和名字 -->
+<view class="mine-logo" wx:if="{{ openID == '' }}">
+    <view class="mine-logo-button">
+        <button bindtap="getUserInfo" type="primary">登录</button>
+    </view>
+    <view class="mine-logo-username">
+        <text>请先登录</text>
+    </view>
+</view>
+
+<view class="mine-logo" wx:if="{{ openID != '' }}">
+    <view class="mine-logo-photo">
+        <!-- <open-data type="userAvatarUrl"></open-data> -->
+        <image src=" {{ avatarUrl }} " mode="cover"></image>
+    </view>
+    <view class="mine-logo-username">
+        <!-- <open-data type="userNickName"></open-data> -->
+        <text>{{ nickName }}</text>
+    </view>
+</view>
+
+<!-- 导航区 -->
+<view class="mine-nav">
+    <view class="mine-nav-bar">
+        <view class="mine-nav-item" wx:for="{{ nav_list }}" wx:key="index" id="{{ item.id }}" bindtap="btnNav">
+            <view class="mine-nav-item-logo">
+                <image src="{{ item.icon }}" mode="aspectFit"></image>
+            </view>
+            <view class="mine-nav-item-text">
+                <text>{{ item.text }}</text>
+            </view>
+        </view>
+    </view>
+</view>
+
+<!-- 功能区 -->
+<view class="mine-menu">
+    <view class="mine-menu-list">
+        <view class="mine-menu-list-li" wx:for="{{ list1_list }}" wx:key="index" id="{{ item.id }}" bindtap="btnList">
+            <view class="mine-menu-list-li-icon">
+                <image src="{{ item.icon }}"></image>
+            </view>
+            <view class="mine-menu-list-li-text">
+                <text>{{ item.text }}</text>
+            </view>
+            <view class="mine-menu-list-li-to">
+                <image src="../../images/user/to.png"></image>
+            </view>
+        </view>
+
+    </view>
+    <view class="mine-menu-list">
+        <view class="mine-menu-list-li" wx:for="{{ list2_list }}" wx:key="index" id="{{ item.id }}" bindtap="btnList">
+            <view class="mine-menu-list-li-icon">
+                <image src="{{ item.icon }}"></image>
+            </view>
+            <view class="mine-menu-list-li-text">
+                <text>{{ item.text }}</text>
+            </view>
+            <view class="mine-menu-list-li-to">
+                <image src="../../images/user/to.png"></image>
+            </view>
+        </view>
+    </view>
+    <view class="mine-menu-list" wx:if="{{ isAdministration }}">
+        <view class="mine-menu-list-li" wx:for="{{ administration }}" wx:key="index" id="{{ item.id }}" bindtap="btnList">
+            <view class="mine-menu-list-li-icon">
+                <image src="{{ item.icon }}"></image>
+            </view>
+            <view class="mine-menu-list-li-text">
+                <text>{{ item.text }}</text>
+            </view>
+            <view class="mine-menu-list-li-to">
+                <image src="../../images/user/to.png"></image>
+            </view>
+        </view>
+    </view>
+</view>

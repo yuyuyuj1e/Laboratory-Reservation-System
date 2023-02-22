@@ -1,0 +1,54 @@
+<!--pages/select/select.wxml-->
+
+<!-- 顶部背景图 -->
+<view class="order-background">
+    <!-- 顶部文字信息 -->
+    <view class="order-top">
+        <view class="order-top-title">
+            <text>实验室列表</text>
+        </view>
+    </view>
+</view>
+
+<!-- 导航区 -->
+<view class="order-nav">
+    <!-- 状态 -->
+    <view class="order-nav-status">
+        <view class="order-nav-status-title">
+            <text>状态: </text>
+        </view>
+        <picker bindchange="statusChange" value="{{ status_index }}" range="{{ status_columns }}">
+            <view class="order-nav-status-cont">
+                <text>{{ status_columns[status_index] }}</text>
+            </view>
+        </picker>
+    </view>
+</view>
+<!-- 实验室列表区 -->
+<scroll-view class="laboratory-list" scroll-y>
+    <view class="laboratory-list-li" wx:for="{{ laboratory_list }}" wx:key="index" id="{{index}}"  bindtap="turnToConfirm" wx:if="{{ status_index == 0 ? true : status_columns[status_index] == item.order[date][time].private_status ? true : false}}">  <!-- 先判断是否是查看全部，是则全部显示，不是再判断是否是所选状态 -->
+        <view class="{{ ['laboratory-box', item.order[date][time].private_status == '可预约' ? 'permit' : item.order[date][time].private_status == '已预约' ? 'already' : 'prohibit'] }}">
+            <view class="laboratory-list-li-img">
+                <image src="{{ item.photo[0] != null ? item.photo[0] : '../../images/empty/empty1.png' }}" mode="aspectFill"></image>
+            </view>
+            <view class="laboratory-list-li-box">
+                <view class="box-top">
+                    <text class="top-text1">{{ item.name }}</text>
+                    <text class="top-text2">{{ item.laboratory }}</text>
+                </view>
+                <view class="box-middle">
+                    <text>{{ item.buildingInfo }}</text>
+                    <text>{{ item.categoryInfo }}</text>
+                </view>
+                <view class="box-bottom">
+                    <view class="box-bottom-left">
+                        <text>最大容量：{{ item.max_count }}人</text>
+                    </view>
+                    <view class="box-bottom-right">
+                        <text>当前容量：{{ item.order[date][time].now_count }}人</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</scroll-view>

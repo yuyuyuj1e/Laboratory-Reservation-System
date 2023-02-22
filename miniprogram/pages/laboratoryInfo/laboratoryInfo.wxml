@@ -1,0 +1,87 @@
+<!--pages/laboratoryInfo/laboratoryInfo.wxml-->
+<!-- 顶部图片区 -->
+<view class="top-img">
+    <swiper indicator-dots autoplay interval="2000" circular>
+        <swiper-item>
+            <image src="{{laboratory_info.photo[0] ? laboratory_info.photo[0] : '../../images/empty/empty1.png'}}"></image>
+        </swiper-item>
+    </swiper> 
+</view>
+<!-- 实验室信息区 -->
+<view class="laboratory">
+    <view class="laboratory-view">
+        <view class="laboratory-info">
+            <view class="laboratory-info-name">
+                <text>{{ laboratory_info.name != null ? laboratory_info.name : laboratory_info.laboratory }}</text>
+            </view>
+            <view class="laboratory-info-border"></view>
+            <view class="laboratory-info-position">
+                <view class="laboratory-info-position-building">
+                    <text>教学楼:  {{ building }}</text>
+                </view>
+                <view class="laboratory-info-position-laboratory">
+                    <text>门牌号: {{ laboratory_info.laboratory }}</text>
+                </view>
+            </view>
+        </view>
+        <view class="laboratory-border">
+            <view class="laboratory-border-left"></view>
+            <view class="laboratory-border-right"></view>
+        </view>
+        <view class="laboratory-introduce">
+            <view class="laboratory-introduce-title">
+                <text>实验室简介</text>
+            </view>
+            <view class="laboratory-introduce-border"></view>
+            <view class="laboratory-introduce-text">
+                <text>{{ laboratory_info.introduction != null ? laboratory_info.introduction : '暂无介绍' }}</text>
+            </view>
+        </view>
+    </view>
+</view>
+
+<!-- <view class="laboratory">
+    <view class="laboratory-info">
+        <view class="laboratory-info-name">
+            <text>{{ laboratory_info.name }}</text>
+        </view>
+        <view class="laboratory-info-border"></view>
+        <view class="laboratory-info-position">
+            <view class="laboratory-info-position-building">
+                <text>教学楼:  {{ building }}</text>
+            </view>
+            <view class="laboratory-info-position-laboratory">
+                <text>门牌号: {{ laboratory_info.laboratory }}</text>
+            </view>
+        </view>
+    </view>
+    <view class="laboratory-introduce">
+        <view class="laboratory-introduce-title">
+            <text>实验室简介</text>
+        </view>
+        <view class="laboratory-introduce-border"></view>
+        <view class="laboratory-introduce-text">
+            <text>{{ laboratory_info.introduction != null ? laboratory_info.introduction : '暂无介绍' }}</text>
+        </view>
+    </view>
+</view> -->
+
+<!-- 底部图片区 -->
+<view class="bottom-img">
+    <view class="bottom-img-first">
+        <view class="bottom-img-first-image">
+            <image src="../../images/fight2.png"></image>
+        </view>
+        <view class="bottom-img-first-text">
+            <text>好好学习</text>
+        </view>
+    </view>
+    <view class="bottom-img-second">
+        <view class="bottom-img-second-image">
+            <image src="../../images/fight1.png"></image>
+        </view>
+        <view class="bottom-img-second-text">
+            <text>天天向上</text>
+        </view>
+    </view>
+</view>

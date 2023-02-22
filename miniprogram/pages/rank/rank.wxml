@@ -1,0 +1,82 @@
+<!--pages/rank/rank.wxml-->
+
+<view class="container">
+    <!-- 顶部 -->
+    <view class="top-container">
+        <!-- 左侧文字 -->
+        <view class="top-title">
+            <text>人气排行榜</text>
+        </view>
+        <view class="top-time">
+            <text>更新于: {{ time }}</text>
+        </view>
+        <!-- 右侧图标 -->
+        <view class="top-logo">
+            <image src="../../images/rank_logo.png" mode="aspectFill"></image>
+        </view>
+    </view>
+
+    <!-- 排行 -->
+    <view class="bottom-container">
+        <!-- 排行榜前三 -->
+        <view class="topThree-container">
+            <!-- 第二 -->
+            <view class="second">
+                <view class="topThree-logo">
+                    <image src="{{ lab_list[1].photo[0] != null ? lab_list[1].photo[0] : '../../images/empty/empty1.png' }}" mode="aspectFill"></image>
+                </view>
+                <view class="topThree-name">
+                    <text>{{ lab_list[1].name }}</text>
+                </view>
+                <view class="topThree-crown">
+                    <image src="../../images/rank_2.png"></image>
+                </view>
+            </view>
+            <!-- 第一 -->
+            <view class="first">
+                <view class="topThree-logo">
+                    <image src="{{ lab_list[0].photo[0] != null ? lab_list[0].photo[0] : '../../images/empty/empty1.png' }}" mode="aspectFill"></image>
+                </view>
+                <view class="topThree-name">
+                    <text>{{ lab_list[0].name }}</text>
+                </view>
+                <view class="topThree-crown">
+                    <image src="../../images/rank_1.png"></image>
+                </view>
+            </view>
+            <!-- 第三 -->
+            <view class="third">
+                <view class="topThree-logo">
+                    <image src="{{ lab_list[2].photo[0] != null ? lab_list[2].photo[0] : '../../images/empty/empty1.png' }}" mode="aspectFill"></image>
+                </view>
+                <view class="topThree-name">
+                    <text>{{ lab_list[2].name }}</text>
+                </view>
+                <view class="topThree-crown">
+                    <image src="../../images/rank_3.png"></image>
+                </view>
+            </view>
+        </view>
+
+        <!-- 其余 -->
+        <scroll-view class="laboratory-list" scroll-y>
+            <view class="laboratory-item" wx:for="{{ lab_list }}" wx:key="index" bindtap="tLab" id="{{ index }} ">
+                <view class="laboratory-item-rank">
+                    <text>{{ index + 1 }}</text>
+                </view> 
+                <view class="laboratory-item-img">
+                    <image src="{{ item.photo[0] != null ? item.photo[0] : '../../images/empty/empty1.png' }}" mode="aspectFill"></image>
+                </view>
+                <view class="laboratory-item-name">
+                    <text>{{ item.name }}</text>
+                </view>
+                <view class="laboratory-item-popularity-img">
+                    <image src="../../images/fire.png"></image>
+                </view>
+                <view class="laboratory-item-popularity-num">
+                    <text>{{ item.popularity }}</text>
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+</view>

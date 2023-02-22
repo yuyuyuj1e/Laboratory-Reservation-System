@@ -1,0 +1,136 @@
+<!--pages/news/news.wxml-->
+
+<scroll-view class="news-container" scroll-y>
+
+    <!-- 新闻顶部 -->
+    <view class="news-top">
+        <view class="news-top-title-box">
+            <view class="news-top-title">
+                <text>{{ news.title }}</text>
+            </view>
+        </view>
+        <view class="news-top-time-box">
+            <view class="news-top-time">
+                <text>发布时间:  {{ news.date }}</text>
+            </view>
+            <view class="news-top-lab" bindtap="btnLaboratoryInfo">
+                <text>实验室:  {{ lab_info.name }}</text>
+            </view>
+        </view>
+    </view>
+
+    <!-- 新闻内容 -->
+    <view class="news-main-box">
+        <view class="news-main-cont">
+            <text space="nbsp" >      {{ news.content }}</text>
+        </view>
+    </view>
+
+    <!-- 评论区 -->
+    <view class="news-comment">
+        <view class="comment-title">
+            <view class="comment-title-cont">
+                <text>精彩评论</text>
+            </view>
+            <view class="search-bar">
+                <view class="condition" bindtap="showCondition">
+                    <view class="select-condition">{{choosedCondition.title}}</view>
+                    <view class="trigger {{ conditionVisible ? 'reverse' : ''}}"></view>
+                    <cover-view class="option-list" style="height: {{conditionVisible ? '': '0'}}">
+                        <cover-view bindtap="onChnageCondition" data-id="{{item.id}}" class="list-item" wx:for="{{conditionList}}" wx:key="index" wx:for-index="index">
+                            <cover-view class="title">{{item.title}}</cover-view>
+                            <cover-view class="title" wx:if="{{item.select}}">√</cover-view>
+                        </cover-view>
+                    </cover-view>
+                </view>
+            </view>
+            <!-- <text class="sort" bindtap="changeSort">{{ select }}</text> -->
+        </view>
+        <!-- 评论 -->
+        <view class="comment-item" wx:for="{{ comment_list }}" wx:key="index">
+            <!-- 顶部信息 -->
+            <view class="comment-top">
+                <!-- 用户头像 -->
+                <view class="user-img">
+                    <image src=" {{ item.user_img }} " mode="cover"></image>
+                </view>
+                <!-- 用户名称 -->
+                <view class="user-name">
+                    <text>{{ item.user_name }}</text>
+                </view>
+                <!-- 评论时间 -->
+                <view class="comment-time">
+                    <text>{{ item.time }}</text>
+                </view>
+                <!-- 点赞 -->
+                <view class="comment-count">
+                    <!-- 点赞数 -->
+                    <view class="comment-count-num">
+                        <text>{{ item.count }}</text>
+                    </view>
+                    <!-- 点赞图标 -->
+                    <view class="comment-count-img" bindtap="changeCount" id="{{ index }}">
+                        <image src="../../images/good.png"></image>
+                    </view>
+                </view>
+            </view>
+            <!-- 评论 -->
+            <view class="comment-container">
+                <!-- 评论内容 -->
+                <view class="comment-content">
+                    <text>{{ item.content }}</text>
+                </view>
+                <!-- 删除 -->
+                <view class="comment-del" bindtap="delComment" id="{{ index }}" wx:if="{{ user_info.administrator }}">
+                    <text>删除</text>
+                </view>
+            </view>
+            
+        </view>
+        <!-- 结束语 -->
+        <view class="comment-bottom">
+            <text>没有更多评论</text>
+        </view>
+    </view>
+</scroll-view>
+
+<!-- 发表评论 -->
+<view class="publish-comment">
+    <view class="publish-comment-btn" bindtap="publishComment" data-position="center"> 
+        <text>发表评论</text>
+    </view>
+</view>
+
+<!-- 弹出层 -->
+<page-container 
+    show="{{ show }}" position="bottom" duration="500" 
+    custom-style="height: 100%;" 
+    overlay-style="background-color: rgba(0, 0, 0, 0.7); filter: blur(4px);"
+    overlay close-on-slide-down 
+>
+    <!-- 弹出层界面 -->
+    <view class="popup-page">
+        <form bindsubmit="formSubmit">
+            <view class="popup-page-top">
+
+                <!-- 取消 -->
+                <view bindtap="btnExit" class="btn-exit">
+                    <text>取消</text>
+                </view>
+                <!-- 标题 -->
+                <view class="btn-title">
+                    <text>发表评论</text>
+                </view>
+                <!-- 发表 -->
+                <button class="btn-confirm" formType="submit">发表</button>
+            </view>
+
+            
+            <view class="popup-page-comment">
+                <textarea name="comment" placeholder="发表你对本活动的言论" auto-height maxlength="999"
+                    placeholder-class="placeholder"
+                ></textarea>
+            </view>
+        </form>
+    </view>
+</page-container>

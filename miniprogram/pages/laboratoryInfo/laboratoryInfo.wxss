@@ -1,0 +1,250 @@
+/* pages/laboratoryInfo/laboratoryInfo.wxss */
+
+/* 背景颜色 */
+page {
+    background-image: linear-gradient(150deg,#079df3, #e4f2fa);
+}
+
+/* 顶部图片区 */
+.top-img {
+    width: 100%;
+    height: 30vh;
+}
+
+.top-img swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.top-img swiper-item image {
+    width: 100%;
+    height: 100%;
+}
+
+/* 实验室信息 */
+
+/* 实验室名称及地点 */
+.laboratory {
+    width: 100%;
+    height: 35vh;
+}
+
+.laboratory-view {
+    width: 95%;
+    height: 90%;
+    border-radius: 30rpx;
+    background-color: white;
+    box-shadow: 10rpx 10rpx 20rpx rgb(0 0 0 / 20%);
+    margin: 5% 2.5%;
+}
+
+.laboratory-info {
+    height: 40%;
+}
+
+.laboratory-info-name {
+    width: 100%;
+    height: 40%;
+    font-size: 35rpx;
+    color: #5e5e5e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.laboratory-info-border {
+    height: 1rpx;
+    width: 50%;
+    margin-left: 25%;
+    background-color: #c8c8c8;
+}
+
+.laboratory-info-position {
+    width: 100%;
+    height: 60%;
+    font-size: 35rpx;
+    color: #5e5e5e;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/* 分割线区 */
+.laboratory-border {
+    height: 1%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.laboratory-border-left, .laboratory-border-right {
+    height: 1rpx;
+    width: 35%;
+    background-color: #c8c8c8;
+}
+
+/* 实验室简介 */
+.laboratory-introduce {
+    height: 59%;
+}
+
+.laboratory-introduce-title {
+    width: 30%;
+    height: 30%;
+    font-size: 35rpx;
+    display: flex;
+    align-items: center;
+    padding-left: 50rpx;
+    color: #5e5e5e;
+}
+
+.laboratory-introduce-border {
+    height: 1rpx;
+    width: 40%;
+    margin-left: 30rpx;
+    background-color: #c8c8c8;
+}
+
+.laboratory-introduce-text {
+    height: 69%;
+    line-height: 70rpx;
+    font-size: 35rpx;
+    padding: 10rpx 35rpx;
+    color: #5e5e5e;
+}
+
+
+/* .laboratory {
+    width: 100%;
+    height: 35vh;
+}
+
+.laboratory-info, .laboratory-introduce{
+    width: 95%;
+    border-radius: 30rpx;
+    background-color: white;
+    box-shadow: 10rpx 10rpx 20rpx rgb(0 0 0 / 20%);
+}
+
+.laboratory-info {
+    height: 200rpx;
+    margin: 25rpx auto;
+}
+
+.laboratory-info-name {
+    width: 100%;
+    height: 40%;
+    font-size: 35rpx;
+    color: #5e5e5e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.laboratory-info-border {
+    height: 1rpx;
+    width: 50%;
+    margin-left: 25%;
+    background-color: #c8c8c8;
+}
+
+.laboratory-info-position {
+    width: 100%;
+    height: 60%;
+    font-size: 35rpx;
+    color: #5e5e5e;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.laboratory-introduce {
+    height: 250rpx;
+    margin: 0 auto;
+}
+
+.laboratory-introduce-title {
+    width: 30%;
+    height: 30%;
+    font-size: 35rpx;
+    display: flex;
+    align-items: center;
+    padding-left: 50rpx;
+    color: #5e5e5e;
+}
+
+.laboratory-introduce-border {
+    height: 1rpx;
+    width: 40%;
+    margin-left: 30rpx;
+    background-color: #c8c8c8;
+}
+
+.laboratory-introduce-text {
+    height: 70%;
+    line-height: 70rpx;
+    font-size: 35rpx;
+    padding-top: 10rpx;
+    padding-left: 35rpx;
+    color: #5e5e5e;
+} */
+
+/* 底部图片区 */
+.bottom-img {
+    width: 100%;
+    height: 35vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.bottom-img-first, .bottom-img-second {
+    width: 100%;
+    height: 50%;
+}
+
+.bottom-img-first {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.bottom-img-second {
+    display: flex;
+}
+
+.bottom-img-first-image, .bottom-img-second-image {
+    width: 35%;
+    height: 100%;
+}
+
+.bottom-img-first-image {
+    margin-right: 30rpx;
+    margin-top: 50rpx
+}
+
+.bottom-img-second-image {
+    margin-left: 30rpx;
+    margin-top: -50rpx;
+}
+
+.bottom-img-first-image image, .bottom-img-second-image image {
+    width: 100%;
+    height: 100%;
+}
+
+.bottom-img-first-text,  .bottom-img-second-text{
+    width: 50rpx;
+    height: 240rpx;
+    line-height: 60rpx;
+    font-size: 60rpx;
+    color: #232424;
+}
+
+.bottom-img-first-text {
+    margin-right: 105rpx;
+    margin-top: 50rpx;
+}
+
+.bottom-img-second-text {
+    margin-left: 105rpx;
+    margin-top: -50rpx;
+}

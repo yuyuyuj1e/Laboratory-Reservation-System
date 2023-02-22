@@ -1,0 +1,164 @@
+/* pages/confirm/confirm.wxss */
+
+/* 背景 */
+.background-img {
+    width: 100%;
+    height: 100vh;
+}
+
+.background-img image {
+    width: 100%;
+    height: 100%;
+}
+
+.main {
+    margin-top: -100vh; 
+}
+
+/* 标题 */
+.main-title {
+    width: 90%;
+    height: 100rpx;
+    font-weight: 700;
+    font-size: 45rpx;
+    line-height: 100rpx;
+    margin:30rpx auto;
+    letter-spacing:8px;
+    color: white;
+}
+
+/* 上部分 */
+.main-top { 
+    width: 90%;
+    margin:20rpx auto;
+    height: 200rpx;
+}
+
+/* 日期栏 */
+.date-box {
+    width: 47%;
+    height: 100%;
+    background-color: rgba(235, 235, 235, 0.219);
+    border-radius: 20rpx;
+    float: left;
+}
+
+/* 时间栏 */
+.time-box {
+    width: 47%;
+    height: 100%;
+    background-color: rgba(235, 235, 235, 0.219);
+    border-radius: 20rpx;
+    float: right;
+}
+
+.top-box-title {
+    width: 90%;
+    height: 70rpx;
+    margin: 20rpx auto;
+}
+
+.top-main {
+    width: 90%;
+    height: 70rpx;
+    margin: 10rpx auto;
+}
+
+.top-main-text {
+    width: 100%;
+    height: 70rpx;
+    line-height: 70rpx;
+    text-align: center;
+    letter-spacing:3px;
+    font-weight: 600;
+    font-size: 29rpx;
+    color: white;
+}
+
+/* 中间部分 */
+.main-middle {
+    width: 90%;
+    margin: 50rpx auto;
+    height: 200rpx;
+    background-color: rgba(235, 235, 235, 0.219);
+    border-radius: 20rpx;
+}
+
+.middle-bottom-box-title {
+    width: 90%;
+    height: 70rpx;
+    padding-top: 20rpx;
+    margin-left: 20rpx;
+}
+
+.middle-bottom-box-text {
+    width: 90%;
+    height: 70rpx;
+    line-height: 70rpx;
+    margin: 10rpx auto;
+    text-align: center;
+    font-weight: 600;
+    font-size: 35rpx;
+    color: white;
+    letter-spacing:2px;
+}
+
+/* 下部分 */
+.main-bottom {
+    width: 90%;
+    margin: 50rpx auto;
+    height: 270rpx;
+    background-color: rgba(235, 235, 235, 0.219);
+    border-radius: 20rpx;
+}
+
+/* 公共title设置 */
+.box-title-icon {
+    width: 70rpx;
+    height: 70rpx;
+    float: left;
+}
+
+.box-title-icon image {
+    width: 100%;
+    height: 100%;
+}
+
+.box-title-text {
+    float: left;
+    width: 170rpx;
+    height: 70rpx;
+    line-height: 70rpx;
+    letter-spacing:3px;
+    padding-left: 10rpx;
+    font-weight: 600;
+    font-size: 35rpx;
+    color: white;
+}
+
+/* 按钮 */
+.main-button {
+    width: 100%;
+    display: flex;
+}
+
+.main-button-left, .main-button-right {
+    width: 250rpx;
+    height: 100rpx;
+    border-radius: 20rpx;
+    line-height: 100rpx;
+    text-align: center;
+    letter-spacing:3px;
+    color: white;
+    font-weight: 800;
+    float: left;
+    background-color: rgba(216, 235, 53, 0.637);
+}
+
+.main-button-left {
+    margin-left: 80rpx;
+}
+
+.main-button-right {
+    margin-right: 80rpx;
+}

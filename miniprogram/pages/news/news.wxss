@@ -1,0 +1,358 @@
+/* pages/news/news.wxss */
+
+.news-container {
+    height: 92vh;
+}
+
+/* 新闻标题 */
+.news-top {
+    width: 100%;
+    height: 200rpx;
+}
+
+.news-top-title-box {
+    width: 100%;
+    height: 150rpx;
+    display: flex;
+    justify-content: center;
+}
+
+.news-top-title {
+    width: 85%;
+    height: 100%;
+    margin: 5rpx 0 5rpx 0;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    line-height: 65rpx;
+    font-size: 40rpx;
+    font-weight: 600;
+}
+
+/* 时间和实验室 */
+.news-top-time-box {
+    width: 100%;
+    height: 50rpx;
+    display: flex;
+}
+.news-top-time, .news-top-lab {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    line-height: 30rpx;
+    font-size: 30rpx;
+    color: #58585a;
+}
+
+.news-top-lab {
+    color: #00af09;
+}
+
+/* 新闻内容 */
+.news-main-box {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 30rpx;
+}
+
+.news-main-cont {
+    width: 95%;
+    height: 100%;
+    font-size: 35rpx;
+    letter-spacing: 5rpx;
+    line-height: 70rpx;
+}
+
+/* 评论区 */
+.news-comment {
+    margin-top: 50rpx;
+    border-top: 15rpx solid #e1e1e1;
+}
+
+.comment-title {
+    margin-top: 30rpx;
+    margin-bottom: 30rpx;
+    margin-left: 50rpx;
+    display: flex;
+    position: relative;
+}
+
+.comment-title::before {
+    content: ' ';
+    display: block;
+    width: 5px;
+    height: 20px;
+    background-color: #00be0a;
+    position: absolute;
+    top: 50%;
+    left: -4%;
+    transform: translateY(-50%);
+}
+
+.comment-title-cont {
+    width: 68%;
+}
+
+
+/* search */
+.search-bar {
+    width: 30%;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+}
+
+.search-bar .condition {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 0 30rpx;
+    position: relative;
+}
+
+.search-bar .condition .option-list {
+    position: absolute;
+    z-index: 100;
+    width: 100%;
+    left: 0;
+    top: 60rpx;
+    box-sizing: border-box;
+    background: #f4f4f4;
+    padding: 0rpx 20rpx;
+    margin-top: 4rpx;
+    border-radius: 6rpx;
+}
+
+.option-list .list-item {
+    height: 60rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.search-bar .condition .trigger {
+    width: 0;
+    height: 0;
+    border: 12rpx solid transparent;
+    border-top: 15rpx solid;
+    position: relative;
+    top: 8rpx;
+    transform: rotate(0deg);
+    transform-origin: center 7rpx;
+    transition: transform 0.4s;
+}
+
+.search-bar .condition .trigger.reverse {
+    transform: rotate(180deg);
+    transform-origin: center 7rpx;
+    transition: transform 0.4s;
+}
+
+/* 下拉框结束 */
+
+
+/* 评论 */
+.comment-item {
+    border-bottom: 1rpx solid #d1d1d1;
+}
+
+.comment-top {
+    width: 100%;
+    height: 100rpx;
+    margin-top: 5rpx;
+    position: relative;
+}
+
+/* 头像 */
+.user-img {
+    width: 80rpx;
+    height: 80rpx;
+    border-radius: 50%;
+    overflow: hidden;
+    position: absolute;
+    top: 10%;
+    left: 4%;
+}
+
+.user-img image {
+    width: 100%;
+    height: 100%;
+}
+
+/* 昵称 */
+.user-name {
+    font-size: 35rpx;
+    letter-spacing: 10rpx;
+    color: #00af09;
+    position: absolute;
+    top: 10%;
+    left: 18%;
+}
+
+/* 评论时间 */
+.comment-time {
+    font-size: 25rpx;
+    color: #58585a;
+    position: absolute;
+    top: 60%;
+    left: 18%;
+}
+
+/* 点赞 */
+.comment-count {
+    width: 125rpx;
+    height: 50rpx;
+    position: absolute;
+    top: 22%;
+    left: 80%;
+    display: flex;
+}
+
+/* 点赞数 */
+.comment-count-num {
+    width: 75rpx;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    font-size: 35rpx;
+    letter-spacing: 5rpx;
+    color: #58585a;
+}
+
+/* 点赞图标 */
+.comment-count-img {
+    width: 50rpx;
+    height: 50rpx;
+}
+
+.comment-count-img image {
+    width: 100%;
+    height: 100%;
+}
+
+/* 评论控制 */
+.comment-container {
+    width: 100%;
+    min-height: 50rpx;
+}
+
+/* 评论内容 */
+.comment-content {
+    width: 90%;
+    min-height: 50rpx;
+    padding-top: 15rpx;
+    margin: 0 auto 20rpx;
+    font-size: 33rpx;
+    letter-spacing: 5rpx;
+    line-height: 55rpx;
+}
+
+/* 删除 */
+.comment-del {
+    margin: -30rpx 0 10rpx 670rpx;
+    color: #58585a;
+}
+
+/* 结束语 */
+.comment-bottom {
+    width: 100%;
+    margin-top: 30rpx;
+    margin-bottom: 25rpx;
+    text-align: center;
+    font-size: 25rpx;
+    letter-spacing: 10rpx;
+    color: #58585a;
+}
+
+/* 发表评论 */
+.publish-comment {
+    width: 100%;
+    height: 8vh;
+    background-color: white;
+}
+
+.publish-comment-btn {
+    width: 90%;
+    height: 50%;
+    margin: 20rpx auto 0;
+    display: flex;
+    align-items: center;
+    background-color: #e1e1e1;
+}
+
+.publish-comment-btn text {
+    margin-left: 30rpx;
+    letter-spacing: 5rpx;
+    font-size: 30rpx;
+    color: #58585a;
+}
+
+/* 弹出层 */
+
+/* 顶部按钮 */
+.popup-page-top {
+    width: 100%;
+    height: 80rpx;
+    display: flex;
+    align-items: center;
+    border-bottom: 1rpx solid #d1d1d1;
+}
+
+/* 取消按钮 */
+.btn-exit {
+    width: 20%;
+    font-size: 35rpx;
+    letter-spacing: 10rpx;
+    text-align: center;
+}
+
+/* 标题 */
+.btn-title {
+    width: 60%;
+    font-size: 40rpx;
+    font-weight: 700;
+    letter-spacing: 8rpx;
+    text-align: center;
+}
+
+/* 发表按钮 */
+.btn-confirm {
+    width: 20%;
+    height: 100%;
+    font-size: 35rpx;
+    letter-spacing: 10rpx;
+    text-align: center;
+    color: #00af09;
+}
+
+/* 评论 */
+.popup-page-comment {
+    width: 95%;
+    min-height: 500rpx;
+    max-height: 1000rpx;
+    margin: 30rpx auto 0;
+    font-size: 35rpx;
+    letter-spacing: 5rpx;
+    line-height: 60rpx;
+}
+
+textarea {
+    width: 100%;
+    min-height: 500rpx;
+    max-height: 1000rpx;
+}
+
+/* 提示信息 */
+.placeholder {
+    color: #b6b6b6;
+    font-size: 14px;
+}

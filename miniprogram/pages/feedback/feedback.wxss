@@ -1,0 +1,38 @@
+/* pages/feedback/feedback.wxss */
+
+/* 背景 */
+page {
+    background-color: #efefef;
+}
+
+/* 反馈内容 */
+.content {
+    background-color: #fff;
+    padding: 10rpx;
+}
+
+textarea {
+    min-height: 300rpx;
+    width: 100%;
+}
+
+/* 联系方式 */
+input {
+    margin-top: 30rpx;
+    height: 100rpx;
+    padding-left: 20rpx;
+    background-color: #fff;
+}
+
+/* 提交按钮 */
+button {
+    width: 80%;
+    margin-top: 30rpx;
+    color: #fff;
+}
+
+/* 提示信息 */
+.placeholder {
+    color: #b6b6b6;
+    font-size: 14px;
+}

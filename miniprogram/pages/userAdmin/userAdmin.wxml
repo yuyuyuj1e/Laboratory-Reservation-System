@@ -1,0 +1,69 @@
+<!--pages/userAdmin/userAdmin.wxml-->
+<view class="container">
+    <!-- 顶部 -->
+    <view class="user-banner">
+        <!-- 顶部文字信息 -->
+        <view class="user-banner-top">
+            <view class="user-banner-top-title">
+                <text>用户列表</text>
+            </view>
+        </view>
+    </view>
+    <!-- 用户列表 -->
+    <view class="user-container">
+        <!-- 用户item -->
+        <view class="user-item" wx:for="{{ user_list }}" wx:key="index">
+            <view class="user-top">
+                <view class="top-title">
+                    <text>用户ID</text>
+                </view>
+                <view class="top-cont">
+                    <text>{{ item._id }}</text>
+                </view>
+            </view>
+            <view class="user-middle-container">
+                <view class="middle-box">
+                    <view class="middle-title">
+                        <text>姓名</text>
+                    </view>
+                    <view class="middle-cont">
+                        <text>{{ item.name }}</text>
+                    </view>
+                </view>
+                <view class="middle-box">
+                    <view class="middle-title">
+                        <text>班级</text>
+                    </view>
+                    <view class="middle-cont">
+                        <text>{{ item.class }}</text>
+                    </view>
+                </view>
+                <view class="middle-box">
+                    <view class="middle-title">
+                        <text>学号</text>
+                    </view>
+                    <view class="middle-cont">
+                        <text>{{ item.student_number != null ? item.student_number : 'null' }}</text>
+                    </view>
+                </view>
+            </view>
+            <view class="user-bottom">
+                <view class="bottom-title">
+                    <text>用户权限</text>
+                </view>
+                <view class="bottom-box">
+                    <view class="bottom-box-title">
+                        <text>修改资料</text>
+                    </view>
+                    <switch checked="{{ item.alter }}" bindchange="alterChange" id="{{ index }}"></switch>
+                </view>
+                <view class="bottom-box">
+                    <view class="bottom-box-title">
+                        <text>预约允许</text>
+                    </view>
+                    <switch checked="{{ item.order }}" bindchange="orderChange" id="{{ index }}"></switch>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

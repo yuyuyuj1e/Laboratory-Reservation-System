@@ -1,0 +1,149 @@
+/* pages/order/order.wxss */
+
+/* 背景颜色 */
+page {
+    background-image: linear-gradient(180deg,#079df3, #e4f2fa);
+}
+
+.background {
+    width: 100%;
+    height: 100%;
+}
+
+/* 顶部文字 */
+.top {
+    width: 750rpx;
+    height: 210rpx;
+}
+
+
+.top-title {
+    font-size: 60rpx;
+    font-weight: bolder;
+    letter-spacing: 20rpx;
+    color: #fff;
+    text-align: center;
+    line-height: 210rpx;
+}
+
+
+/* 预约区 */
+.order {
+    width: 92%;
+    height: 700rpx;
+    margin-right: 4%;
+    margin-left: 4%;
+    margin-top: 50rpx;
+}
+
+/* 预约方式选择 */
+.order-tpye {
+    width: 75%;
+}
+
+.order-type-title, .order-tpye {
+    height: 80rpx;
+    line-height: 80rpx;
+    display: block;
+    position: relative;
+    border-radius: 40rpx 40rpx 0 0;
+}
+
+.order-type-title {
+    text-align: center;
+    color: #fff;
+    font-size: 34rpx;
+    float: left;
+    width: 50%;
+    background: #cbcbcb;
+    margin-right: -10px;
+}
+
+.order-type-title-active {
+    color: #1dd08c;
+    font-weight: 700;
+    background-color: #fff;
+    z-index: 100;  /* 堆叠属性 */
+}
+
+/* 预约选择 */
+.order-panel {
+    width: 100%;
+    min-height: 670rpx;
+    position: relative;
+    overflow: hidden;
+    background: #fff;
+    border-radius: 0 40rpx 40rpx 40rpx;
+    transition: height 2s;
+    padding-bottom: 20rpx;
+}
+
+.order-panel-item {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    transform: translateX(-100%);
+}
+
+.order-type-item-active {
+    width: 100%;
+    height: 650rpx;
+    transition: transform .15s;
+    transform: translateX(0);
+}
+
+.order-panel-item-it {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding-left: 10%;
+}
+
+.order-panel-item-it.class {
+    height: 110rpx;
+}
+
+.order-panel-item-it.person {
+    height: 125rpx;
+}
+
+.order-panel-item-it-head {
+    width: 20%;
+    padding-left: 10rpx;
+    line-height: 88rpx;
+    font-size: 35rpx;
+    letter-spacing: 5rpx;
+}
+
+.order-panel-item-it-box {
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    line-height: 88rpx;
+    font-size: 35rpx;
+    letter-spacing: 5rpx;
+}
+
+.order-panel-item-button {
+    width: 100%;
+    height: 150rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.order-panel-item-button button{
+    width: 80%;
+    height: 88rpx;
+    text-align: center;
+    line-height: 88rpx;
+    font-size: 38rpx;
+    color: #fff;
+    background-color: #0bc66f;
+    box-shadow: 0 4rpx 16rpx #6ee0ab;
+    border-radius: 200rpx;
+}
+
+.van-stepper input{
+    font-size: 30rpx;
+}
